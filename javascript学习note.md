@@ -1,5 +1,6 @@
 ---
 title: javascript学习note
+abbrlink: 1579
 date: 2021-04-26 16:40:26
 updated:
 tags:
