@@ -1,6 +1,28 @@
 ---
-abbrlink: 0
+title: macos自用配置
+date: 2021-07-03 01:50:29
+updated:
+tags:
+categories:
+keywords:
+description:
+top_img:
+comments:
+cover:
+toc:
+toc_number:
+copyright:
+copyright_author:
+copyright_author_href:
+copyright_url:
+copyright_info:
+mathjax:
+katex:
+aplayer:
+highlight_shrink:
+aside:
 ---
+
 ### macos自用配置
 
 浏览器——google chrome
