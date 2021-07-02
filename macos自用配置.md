@@ -1,5 +1,6 @@
 ---
 title: macos自用配置
+abbrlink: 20018
 date: 2021-07-03 01:50:29
 updated:
 tags:
