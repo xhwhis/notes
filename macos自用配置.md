@@ -1,3 +1,6 @@
+---
+abbrlink: 0
+---
 ### macos自用配置
 
 浏览器——google chrome
