@@ -24,11 +24,11 @@ highlight_shrink:
 aside:
 ---
 
-### Swift学习note
+## Swift学习note
 
 
 
-#### Swift引入
+### Swift引入
 
 使用 import 语句来引入任何的 Objective-C 框架（或 C 库）到 Swift 程序中。例如 import cocoa 语句导入了使用了 Cocoa 库和API，可以在 Swift 程序中使用它们。
 
@@ -36,7 +36,7 @@ Cocoa 本身由 Objective-C 语言写成，Objective-C 又是 C 语言的严格�
 
 
 
-#### 分号
+### 分号
 
 Swift不要求在每行语句的结尾使用分号(;)，但在同一行书写多条语句时，必须用分号隔开：
 
@@ -49,7 +49,7 @@ var str = "Hello World"; print (str)
 
 
 
-#### 标识符
+### 标识符
 
 如果一定要使用关键字作为标识符，可以在关键字前后添加重音符号（`），例如：
 
@@ -61,7 +61,7 @@ let `class` = "Runoob"
 
 
 
-#### Swift空格
+### Swift空格
 
 Swift语言并不是像C/C++，Java那样完全忽视空格，Swift对空格的使用有一定的要求，但是又不像Python对缩进的要求那么严格。
 
@@ -104,11 +104,11 @@ let b = 1+2
 
 
 
-#### Swift数据类型
+### Swift数据类型
 
 Int、UInt、Float、Double、Bool、String、Character（类似cpp）
 
-##### 类型别名
+#### 类型别名
 
 类型别名对当前的类型定义了另一个名字，类型别名通过使用typealias关键字来定义。语法格式如下：
 
@@ -118,7 +118,7 @@ typealias newname = type
 
 类似c中的typedef
 
-##### 类型安全
+#### 类型安全
 
 Swift 是一个类型安全（type safe）的语言。
 
@@ -141,7 +141,7 @@ varA = "This is hello"
 
 意思为不能将 'String' 字符串赋值给 'Int' 变量
 
-##### 常量声明
+#### 常量声明
 
 常量使用关键字let来声明，语法如下：
 
@@ -149,7 +149,7 @@ varA = "This is hello"
 let constantName = <initial value>
 ```
 
-##### 类型标注
+#### 类型标注
 
 当声明常量或者变量的时候可以加上类型标注（type annotation），说明常量或者变量中要存储的值的类型。如果要添加类型标注，需要在常量或者变量名后面加上一个冒号和空格，然后加上类型名称。
 
@@ -159,7 +159,7 @@ var constantName:<data type> = <optional initial value>
 
 
 
-#### 区间运算符
+### 区间运算符
 
 Swift 提供了两个区间的运算符
 
@@ -170,7 +170,7 @@ Swift 提供了两个区间的运算符
 
 
 
-#### 字符串函数及运算符
+### 字符串函数及运算符
 
 Swift 支持以下几种字符串函数及运算符：
 
@@ -192,9 +192,9 @@ Swift 支持以下几种字符串函数及运算符：
 
 
 
-#### Swift数组
+### Swift数组
 
-##### 创建数组
+#### 创建数组
 
 可以使用构造语法来创建一个由特定数据类型构成的空数组：
 
@@ -222,9 +222,9 @@ var someInts:[Int] = [10, 20, 30]
 
 
 
-#### Swift字典
+### Swift字典
 
-##### 创建字典
+#### 创建字典
 
 可以使用以下语法来创建一个特定类型的空字典：
 
@@ -244,7 +244,7 @@ var someDict = [Int: String]()
 var someDict:[Int:String] = [1:"One", 2:"Two", 3:"Three"]
 ```
 
-##### 修改字典
+#### 修改字典
 
 可以使用 updateValue(forKey:) 增加或更新字典的内容。如果 key 不存在，则添加值，如果存在则修改 key 对应的值。updateValue(_:forKey:)方法返回Optional值。实例如下：
 
@@ -263,7 +263,7 @@ print( "key = 2 的值为 \(someDict[2])" )
 print( "key = 3 的值为 \(someDict[3])" )
 ```
 
-##### 移除Key-Value对
+#### 移除Key-Value对
 
 可以使用 removeValueForKey() 方法来移除字典 key-value 对。如果 key 存在该方法返回移除的值，如果不存在返回 nil 。实例如下：
 
@@ -279,7 +279,7 @@ print( "key = 2 的值为 \(someDict[2])" )
 print( "key = 3 的值为 \(someDict[3])" )
 ```
 
-##### 字典转换为数组
+#### 字典转换为数组
 
 提取字典的键值(key-value)对，并转换为独立的数组。实例如下：
 
@@ -306,9 +306,9 @@ for (value) in dictValues {
 
 
 
-#### Swift函数
+### Swift函数
 
-##### 元组作为函数返回值
+#### 元组作为函数返回值
 
 元组与数组类似，不同的是，元组中的元素可以是任意类型，使用的是圆括号。
 
@@ -336,7 +336,7 @@ let bounds = minMax(array: [8, -6, 2, 109, 3, 71])
 print("最小值为 \(bounds.min) ，最大值为 \(bounds.max)")
 ```
 
-##### 外部参数名
+#### 外部参数名
 
 可以在局部参数名前指定外部参数名，中间以空格分隔，外部参数名用于在函数调用时传递给函数的参数。
 
@@ -356,7 +356,7 @@ func pow(firstArg a: Int, secondArg b: Int) -> Int {
 pow(firstArg:2, secondArg:3)
 ```
 
-##### 可变参数
+#### 可变参数
 
 可变参数可以接受零个或多个值。函数调用时，可以用可变参数来指定函数参数，其数量是不确定的。
 
@@ -373,7 +373,7 @@ func vari<N>(members: N...){
 vari(members: 1,2,3)
 ```
 
-##### 引用参数
+#### 引用参数
 
 一般默认在函数中定义的参数都是常量参数，也就是这个参数你只可以查询使用，不能改变它的值。
 
