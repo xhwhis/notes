@@ -1,27 +1,7 @@
 ---
 title: newcoder_cpp
-abbrlink: 22684
-date: 2021-04-20 10:58:13
-updated:
-tags:
-categories:
-keywords:
-description:
-top_img:
-comments:
-cover:
-toc:
-toc_number:
-copyright:
-copyright_author:
-copyright_author_href:
-copyright_url:
-copyright_info:
-mathjax:
-katex:
-aplayer:
-highlight_shrink:
-aside:
+date: 2022-03-27T22:59:11+08:00
+draft: true
 ---
 # niuke interview
 

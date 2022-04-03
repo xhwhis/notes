@@ -1,27 +1,7 @@
 ---
 title: socket
-abbrlink: 34204
-date: 2021-04-20 11:05:34
-updated:
-tags:
-categories:
-keywords:
-description:
-top_img:
-comments:
-cover:
-toc:
-toc_number:
-copyright:
-copyright_author:
-copyright_author_href:
-copyright_url:
-copyright_info:
-mathjax:
-katex:
-aplayer:
-highlight_shrink:
-aside:
+date: 2022-03-27T22:59:11+08:00
+draft: true
 ---
 我们深谙信息交流的价值，那网络中进程之间如何通信，如我们每天打开浏览器浏览网页时，浏览器的进程怎么与web服务器通信的？当你用QQ聊天时，QQ进程怎么与服务器或你好友所在的QQ进程通信？这些都得靠socket？那什么是socket？socket的类型有哪些？还有socket的基本函数，这些都是本文想介绍的。本文的主要内容如下：
 

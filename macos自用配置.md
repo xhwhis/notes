@@ -1,27 +1,7 @@
 ---
 title: macos自用配置
-abbrlink: 20018
-date: 2021-07-03 01:50:29
-updated:
-tags:
-categories:
-keywords:
-description:
-top_img:
-comments:
-cover:
-toc:
-toc_number:
-copyright:
-copyright_author:
-copyright_author_href:
-copyright_url:
-copyright_info:
-mathjax:
-katex:
-aplayer:
-highlight_shrink:
-aside:
+date: 2022-03-27T22:59:11+08:00
+draft: true
 ---
 
 ### macos自用配置
@@ -36,8 +16,6 @@ aside:
 
 git tool——sourcetree
 
-
-
 #### 开发环境
 
 最先安装完成Xcode，然后
@@ -48,15 +26,11 @@ xcode-select --install
 
 配置常用开发环境（其中python3 version 3.8，需brew install python@3.9）
 
-
-
 #### 安装homebrewcn
 
 ```sh
 /bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)"
 ```
-
-
 
 #### 安装常用工具
 
@@ -67,8 +41,6 @@ brew install #+ 以上包名
 ```
 
 安装过程中部分包会提示在.zshrc中添加配置，自行添加
-
-
 
 #### 修改pip源
 
@@ -97,16 +69,12 @@ pip install -g pygments
 pip install -g pynvim
 ```
 
-
-
 #### 修改npm、yarn源
 
 ```sh
 npm config set registry https://registry.npm.taobao.org
 yarn config set registry https://registry.npm.taobao.org
 ```
-
-
 
 #### iterm2配置
 
