@@ -1,20 +1,16 @@
-Oracle Cloud部署
+Oracle Cloud 部署
 
-arm上部署情qinglong、vaultwarden、caddy、v2ray
+arm 上部署情 qinglong、vaultwarden、caddy、v2ray
 
-amd64上部署focalboard、appflowy、caddy（暂定）
+amd64 上部署 focalboard、appflowy、caddy（暂定）
 
-
-
-安装podman
+安装 podman
 
 ```sh
 dnf install -y podman
 ```
 
-
-
-安装qinglong、vaultwarden
+安装 qinglong、vaultwarden
 
 ```sh
 mkdir ql
@@ -31,9 +27,7 @@ mkdir maiark
 podman run -d --privileged --name maiark -v $PWD/maiark:/MaiARK -p 8082:8082 --restart always docker.io/kissyouhunter/maiark:latest
 ```
 
-
-
-安装caddy
+安装 caddy
 
 ```sh
 dnf install 'dnf-command(copr)'
@@ -41,7 +35,7 @@ dnf copr enable @caddy/caddy
 dnf install -y caddy
 ```
 
-firewall配置
+firewall 配置
 
 ```sh
 firewall-cmd --add-service=http --permanent
@@ -81,7 +75,7 @@ vw.whis.me {
 caddy fmt --overwrite /etc/caddy/Caddyfile
 ```
 
-启动caddy
+启动 caddy
 
 ```sh
 systemctl enable --now caddy.service
