@@ -3,33 +3,30 @@ title: note4
 date: 2022-03-27T22:59:11+08:00
 draft: true
 ---
+
 # DAY05
 
 ## 输出函数说明
 
-printf函数
+printf 函数
 
 - 头文件:stdio.h
-- 原型:int printf(const char *format,...);
+- 原型:int printf(const char \*format,...);
 - format:格式控制字符串
 - ...:可变参数列表
 - 返回值:输出字符类型
 
-
-
 ## 输出函数说明
 
-scanf函数
+scanf 函数
 
 - 头文件:stdio.h
-- 原型:int scanf(const char *format,...);
+- 原型:int scanf(const char \*format,...);
 - format:格式控制字符
 - ...:可变参数列表
 - 返回值:成功读入列表
 
-
-
-请使用printf函数,求解一个数字n的十进制表示的数字位数
+请使用 printf 函数,求解一个数字 n 的十进制表示的数字位数
 
 ```
 #include<stdio.h>
@@ -41,8 +38,6 @@ int main(){
     return 0;
 }
 ```
-
-
 
 请写一个程序,读入一个行字符串(可能包含空格),输出这个字符串中字符的数量
 
@@ -58,9 +53,7 @@ int main(){
 }
 ```
 
-
-
-## sprintf和fprintf代码演示
+## sprintf 和 fprintf 代码演示
 
 ```
 #include <stdio.h>

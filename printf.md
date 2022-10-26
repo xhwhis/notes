@@ -3,7 +3,8 @@ title: printf
 date: 2022-03-27T22:59:11+08:00
 draft: true
 ---
-printf输出颜色和ANSI控制码(高亮,下划线,闪烁,光标位置,清屏等)
+
+printf 输出颜色和 ANSI 控制码(高亮,下划线,闪烁,光标位置,清屏等)
 
 颜色：
 
@@ -49,17 +50,17 @@ int main()
 
 printf( CYAN "current function is %s " GREEN " file line is %d/n" NONE,
 
-__FUNCTION__, __LINE__ );
+**FUNCTION**, **LINE** );
 
 fprintf(stderr, RED "current function is %s " BLUE " file line is %d/n" NONE,
 
-__FUNCTION__, __LINE__ );
+**FUNCTION**, **LINE** );
 
 return 0;
 
 }
 
-颜色分为背景色和字体色，30~39用来设置字体色，40~49设置背景：
+颜色分为背景色和字体色，30~39 用来设置字体色，40~49 设置背景：
 
 背景色 字体色
 
@@ -79,9 +80,9 @@ return 0;
 
 47: 白色 37: 白色
 
-记得在打印完之后，把颜色恢复成NONE，不然再后面的打印都会跟着变色。
+记得在打印完之后，把颜色恢复成 NONE，不然再后面的打印都会跟着变色。
 
-另外，还可以加一些ANSI控制码。加颜色只是以下控制码中的一种：
+另外，还可以加一些 ANSI 控制码。加颜色只是以下控制码中的一种：
 
 /033[0m 关闭所有属性
 
@@ -99,15 +100,15 @@ return 0;
 
 /033[40m -- /033[47m 设置背景色
 
-/033[nA 光标上移n行
+/033[nA 光标上移 n 行
 
-/033[nB 光标下移n行
+/033[nB 光标下移 n 行
 
-/033[nC 光标右移n行
+/033[nC 光标右移 n 行
 
-/033[nD 光标左移n行
+/033[nD 光标左移 n 行
 
-/033[y;xH设置光标位置
+/033[y;xH 设置光标位置
 
 /033[2J 清屏
 

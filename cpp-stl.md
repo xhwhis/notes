@@ -3,13 +3,12 @@ title: cpp_stl
 date: 2022-03-27T22:59:11+08:00
 draft: true
 ---
+
 # c++ stl
-
-
 
 ## queue-类说明
 
-queue类：队列
+queue 类：队列
 
 - 头文件：queue
 - 命名空间：std
@@ -22,11 +21,9 @@ queue类：队列
 | q.pop()   | 出队         |
 | q.size()  | 队列元素数量 |
 
-
-
 ## stack-类说明
 
-stack类：栈
+stack 类：栈
 
 - 头文件：stack
 - 命名空间：std
@@ -39,11 +36,9 @@ stack类：栈
 | s.pop()类 | 出栈         |
 | s.size()  | 栈元素数量   |
 
-
-
 ## string-类说明
 
-string类：字符串
+string 类：字符串
 
 - 头文件：string
 - 命名空间：std
@@ -55,8 +50,6 @@ string类：字符串
 | str1 > str2   | 字典序大于 |
 | str1 += str2  | 字符串连接 |
 | str1.length() | 字符串长度 |
-
-
 
 ### string (hzoj-166)
 
@@ -77,26 +70,22 @@ int main() {
 }
 ```
 
-
-
 ## hash_map-类说明
 
-hash_map类：字符串
+hash_map 类：字符串
 
 - 头文件：<hash_map> / <ext/hash_map>
-- 命名空间：__gnu_cxx
+- 命名空间：\_\_gnu_cxx
 - 声明：hash_map<key_type, value_type, hash_func> h;
 
-| h.find(key)    | 判断某个key值是否在hash_map中 |
-| -------------- | ----------------------------- |
-| h[key] = value | 将value存储在key位上          |
-| h[key]         | 房屋key值对应的value          |
-| h.begin()      | 哈希表的起始位置              |
-| h.end()        | 哈希表的结束位置              |
+| h.find(key)    | 判断某个 key 值是否在 hash_map 中 |
+| -------------- | --------------------------------- |
+| h[key] = value | 将 value 存储在 key 位上          |
+| h[key]         | 房屋 key 值对应的 value           |
+| h.begin()      | 哈希表的起始位置                  |
+| h.end()        | 哈希表的结束位置                  |
 
-
-
-## unordered_map-类说明（c++11标准）
+## unordered_map-类说明（c++11 标准）
 
 unordered_map-类：字符串
 
@@ -104,14 +93,12 @@ unordered_map-类：字符串
 - 命名空间：std
 - 声明：unordered_map<key_type, value_type, hash_func> h;
 
-| h.find(key)    | 判断某个key值是否在unordered_map中 |
-| -------------- | ---------------------------------- |
-| h[key] = value | 将value存储在key位上               |
-| h[key]         | 访问key值对应的value               |
-| h.begin()      | 哈希表的起始位置                   |
-| h.end()        | 哈希表的结束位置                   |
-
-
+| h.find(key)    | 判断某个 key 值是否在 unordered_map 中 |
+| -------------- | -------------------------------------- |
+| h[key] = value | 将 value 存储在 key 位上               |
+| h[key]         | 访问 key 值对应的 value                |
+| h.begin()      | 哈希表的起始位置                       |
+| h.end()        | 哈希表的结束位置                       |
 
 ### sort (hzoj-245)
 
@@ -139,16 +126,14 @@ int main() {
 }
 ```
 
-
-
 ### nth_element (hzoj-245)
 
-nth_element是部分排序算法，它重排[first, last)中元素，使得：
+nth_element 是部分排序算法，它重排[first, last)中元素，使得：
 
-- nth所指向的元素被更改为假如[first, last)已排序则该位置会出现的元素。
-- 这个新的nth元素前的所有元素小于或等于新的 nth 元素后的所有元素。
+- nth 所指向的元素被更改为假如[first, last)已排序则该位置会出现的元素。
+- 这个新的 nth 元素前的所有元素小于或等于新的 nth 元素后的所有元素。
 
-更正式而言，nth_element以升序部分排序范围[first, last)，使得对于任何范围[first, nth)中的i和任何范围[nth, last)中的j，都满足条件!(*j < i)。置于nth位置的元素则准确地是假如完全排序范围则应出现于此位置的元素。
+更正式而言，nth_element 以升序部分排序范围[first, last)，使得对于任何范围[first, nth)中的 i 和任何范围[nth, last)中的 j，都满足条件!(\*j < i)。置于 nth 位置的元素则准确地是假如完全排序范围则应出现于此位置的元素。
 
 ```c++
 #include <iostream>
@@ -173,8 +158,6 @@ int main() {
     return 0;
 }
 ```
-
-
 
 ### map
 
@@ -205,13 +188,11 @@ int main() {
         arr[age] = name;
     }
     for (auto iter = arr.begin(); iter != arr.end(); iter++) {
-        cout << iter->second << endl; 
+        cout << iter->second << endl;
     }
     return 0;
 }
 ```
-
-
 
 ### 存储任意类型的数组 (vector->array)
 
@@ -254,7 +235,7 @@ int main() {
     cout << arr.size() << endl;
     arr.push_back(123);
     cout << arr[0] << endl;
-    cout << arr.size() << endl; 
+    cout << arr.size() << endl;
     cout << arr2.size() << endl;
     arr2.push_back(123);
     cout << arr2[0] << endl;

@@ -4,21 +4,21 @@ date: 2022-03-28T15:58:59+08:00
 draft: true
 ---
 
-# Mac本地化安装配置Flarum
+# Mac 本地化安装配置 Flarum
 
 系统: macOS Monterey + Apple M1
 
 前提: [homebrewCN](https://gitee.com/cunkai/HomebrewCN)
 
-## MariaDB配置
+## MariaDB 配置
 
 ```sh
 brew install mariadb
 brew services restart mariadb
 ```
 
-初始化MariaDB
-sudo下配置
+初始化 MariaDB
+sudo 下配置
 
 ```sh
 mysql_secure_installation
@@ -30,7 +30,7 @@ mysql_secure_installation
 brew install composer
 ```
 
-ps. 安装composer会连同依赖php一同安装，但flarum没适配最新的php
+ps. 安装 composer 会连同依赖 php 一同安装，但 flarum 没适配最新的 php
 
 ## php@8.0
 
@@ -39,7 +39,7 @@ brew install php@8.0
 brew services restart php@8.0
 ```
 
-同环境下还有一个php，指定一下PHP8.0
+同环境下还有一个 php，指定一下 PHP8.0
 
 ```sh
 echo 'export PATH="/opt/homebrew/opt/php@8.0/bin:$PATH"' >> ~/.zshrc
@@ -52,8 +52,8 @@ echo 'export PATH="/opt/homebrew/opt/php@8.0/sbin:$PATH"' >> ~/.zshrc
 brew install caddy
 ```
 
-URL重写——配置Caddy
-在/opt/homebrew/etc/Caddyfile中添加配置，如果没有该文件，则新建
+URL 重写——配置 Caddy
+在/opt/homebrew/etc/Caddyfile 中添加配置，如果没有该文件，则新建
 
 ```
 127.0.0.1:9090 {
@@ -68,11 +68,10 @@ URL重写——配置Caddy
 }
 ```
 
-其中本地端口可改为其他，root指向flarum的public路径，php配置如未修改过，则fastcgi指向URL 127.0.0.1:9000即可
+其中本地端口可改为其他，root 指向 flarum 的 public 路径，php 配置如未修改过，则 fastcgi 指向 URL 127.0.0.1:9000 即可
 
 启动
 
 ```sh
 brew services start caddy
 ```
-

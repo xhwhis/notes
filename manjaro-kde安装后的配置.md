@@ -3,17 +3,14 @@ title: manjaro kde安装后的配置
 date: 2022-03-27T22:59:11+08:00
 draft: true
 ---
-# manjaro kde安装后的配置
 
-
+# manjaro kde 安装后的配置
 
 ## 启动项
 
 ```shell
 sudo update-grub
 ```
-
-
 
 ## 镜像源（选择清华源）
 
@@ -33,8 +30,6 @@ Server = http://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 sudo pacman -S archlinuxcn-keyring
 sudo apcman -Syyu
 ```
-
-
 
 ## 安装软件
 
@@ -66,7 +61,7 @@ sudo vim /etc/hosts
 151.101.76.133 raw.githubusercontent.com
 ```
 
-#### github密钥导入
+#### github 密钥导入
 
 ```shell
 ssh-keygen
@@ -129,7 +124,7 @@ yay -S zsh
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 ```
 
-#### zsh插件
+#### zsh 插件
 
 ```
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting autojump web-search extract last-working-dir sudo pip thefuck colored-man-pages colorize safe-paste git-open vi-mode copyfile copydir gitfast command-not-found history)
@@ -142,7 +137,7 @@ git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh
 git clone https://github.com/paulirish/git-open.git $ZSH_CUSTOM/plugins/git-open
 ```
 
-#### zshrc添加
+#### zshrc 添加
 
 ```
 alias vim="nvim"
@@ -193,11 +188,11 @@ yay -S nerd-fonts-complete ttf-monaco ttf-hanazono
 yay -S latte-dock
 ```
 
-主题	arc
+主题 arc
 
-图标	numix papirus
+图标 numix papirus
 
-光标	mcmojave
+光标 mcmojave
 
 ### 其他软件
 
@@ -207,7 +202,7 @@ yay -S xmind zoom dingtalk electronic-wechat qq-linux
 
 ### 双系统时间
 
-windows端管理员下cmd或powershell
+windows 端管理员下 cmd 或 powershell
 
 ```shell
 reg add "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation" /v RealTimeIsUniversal /d 1 /t REG_QWORD /f

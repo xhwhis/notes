@@ -4,21 +4,17 @@ date: 2022-03-27T22:59:11+08:00
 draft: true
 ---
 
-## Swift学习note
+## Swift 学习 note
 
+### Swift 引入
 
-
-### Swift引入
-
-使用 import 语句来引入任何的 Objective-C 框架（或 C 库）到 Swift 程序中。例如 import cocoa 语句导入了使用了 Cocoa 库和API，可以在 Swift 程序中使用它们。
+使用 import 语句来引入任何的 Objective-C 框架（或 C 库）到 Swift 程序中。例如 import cocoa 语句导入了使用了 Cocoa 库和 API，可以在 Swift 程序中使用它们。
 
 Cocoa 本身由 Objective-C 语言写成，Objective-C 又是 C 语言的严格超集，所以在 Swift 应用中可以很简单的混入 C 语言代码，甚至是 C++ 代码。
 
-
-
 ### 分号
 
-Swift不要求在每行语句的结尾使用分号(;)，但在同一行书写多条语句时，必须用分号隔开：
+Swift 不要求在每行语句的结尾使用分号(;)，但在同一行书写多条语句时，必须用分号隔开：
 
 ```swift
 import Cocoa
@@ -26,8 +22,6 @@ var str = "Hello World"; print (str)
 ```
 
 词法分析或语法分析时应该直接忽略了分号(;)
-
-
 
 ### 标识符
 
@@ -37,15 +31,13 @@ var str = "Hello World"; print (str)
 let `class` = "Runoob"
 ```
 
-比php中的标识符前加@的处理更高级
+比 php 中的标识符前加@的处理更高级
 
+### Swift 空格
 
+Swift 语言并不是像 C/C++，Java 那样完全忽视空格，Swift 对空格的使用有一定的要求，但是又不像 Python 对缩进的要求那么严格。
 
-### Swift空格
-
-Swift语言并不是像C/C++，Java那样完全忽视空格，Swift对空格的使用有一定的要求，但是又不像Python对缩进的要求那么严格。
-
-在Swift中，运算符不能直接跟在变量或常量的后面。例如下面的代码会报错：
+在 Swift 中，运算符不能直接跟在变量或常量的后面。例如下面的代码会报错：
 
 ```swift
 let a=1 + 2
@@ -71,7 +63,7 @@ let a = 1+ 2
 error: consecutive statements on a line must be separated by ';'
 ```
 
-这是因为Swift认为到1+这个语句就结束了，2就是下一个语句了。
+这是因为 Swift 认为到 1+这个语句就结束了，2 就是下一个语句了。
 
 只有这样写才不会报错：
 
@@ -80,23 +72,21 @@ let a = 1 + 2
 let b = 1+2
 ```
 
-好蠢的设计，为什么不直接忽略空格！？不会用空格来分词吧！那也太不apple了
+好蠢的设计，为什么不直接忽略空格！？不会用空格来分词吧！那也太不 apple 了
 
+### Swift 数据类型
 
-
-### Swift数据类型
-
-Int、UInt、Float、Double、Bool、String、Character（类似cpp）
+Int、UInt、Float、Double、Bool、String、Character（类似 cpp）
 
 #### 类型别名
 
-类型别名对当前的类型定义了另一个名字，类型别名通过使用typealias关键字来定义。语法格式如下：
+类型别名对当前的类型定义了另一个名字，类型别名通过使用 typealias 关键字来定义。语法格式如下：
 
 ```swift
 typealias newname = type
 ```
 
-类似c中的typedef
+类似 c 中的 typedef
 
 #### 类型安全
 
@@ -112,7 +102,7 @@ a = "hi"
 print(a)
 ```
 
-以上程序，会在Xcode中报错：
+以上程序，会在 Xcode 中报错：
 
 ```
 error: cannot assign value of type 'String' to type 'Int'
@@ -123,7 +113,7 @@ varA = "This is hello"
 
 #### 常量声明
 
-常量使用关键字let来声明，语法如下：
+常量使用关键字 let 来声明，语法如下：
 
 ```swift
 let constantName = <initial value>
@@ -137,42 +127,36 @@ let constantName = <initial value>
 var constantName:<data type> = <optional initial value>
 ```
 
-
-
 ### 区间运算符
 
 Swift 提供了两个区间的运算符
 
-| 运算符         | 描述                                                         | 实例                           |
-| -------------- | ------------------------------------------------------------ | ------------------------------ |
-| 闭区间运算符   | 闭区间运算符（a...b）定义一个包含从a到b(包括a和b)的所有值的区间，b必须大于等于a。 ‌ 闭区间运算符在迭代一个区间的所有值时是非常有用的，如在for-in循环中 | 1...5 区间值为 1, 2, 3, 4 和 5 |
-| 半开区间运算符 | 半开区间（a..<b）定义一个从a到b但不包括b的区间。 之所以称为半开区间，是因为该区间包含第一个值而不包括最后的值 | 1..< 5 区间值为 1, 2, 3, 和 4  |
-
-
+| 运算符         | 描述                                                                                                                                                             | 实例                           |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------ |
+| 闭区间运算符   | 闭区间运算符（a...b）定义一个包含从 a 到 b(包括 a 和 b)的所有值的区间，b 必须大于等于 a。 ‌ 闭区间运算符在迭代一个区间的所有值时是非常有用的，如在 for-in 循环中 | 1...5 区间值为 1, 2, 3, 4 和 5 |
+| 半开区间运算符 | 半开区间（a..<b）定义一个从 a 到 b 但不包括 b 的区间。 之所以称为半开区间，是因为该区间包含第一个值而不包括最后的值                                              | 1..< 5 区间值为 1, 2, 3, 和 4  |
 
 ### 字符串函数及运算符
 
 Swift 支持以下几种字符串函数及运算符：
 
-| 序号 | 函数/运算符 & 描述                                           |
-| :--- | :----------------------------------------------------------- |
-| 1    | **isEmpty** 判断字符串是否为空，返回布尔值                   |
-| 2    | **hasPrefix(prefix: String)** 检查字符串是否拥有特定前缀     |
-| 3    | **hasSuffix(suffix: String)** 检查字符串是否拥有特定后缀。   |
+| 序号 | 函数/运算符 & 描述                                                                                          |
+| :--- | :---------------------------------------------------------------------------------------------------------- |
+| 1    | **isEmpty** 判断字符串是否为空，返回布尔值                                                                  |
+| 2    | **hasPrefix(prefix: String)** 检查字符串是否拥有特定前缀                                                    |
+| 3    | **hasSuffix(suffix: String)** 检查字符串是否拥有特定后缀。                                                  |
 | 4    | **Int(String)** 转换字符串数字为整型。 实例: `let myString: String = "256" let myInt: Int? = Int(myString)` |
-| 5    | **String.count** Swift 3 版本使用的是 String.characters.count计算字符串的长度 |
-| 6    | **utf8** 可以通过遍历 String 的 utf8 属性来访问它的 UTF-8 编码 |
-| 7    | **utf16** 可以通过遍历 String 的 utf8 属性来访问它的 utf16 编码 |
-| 8    | **unicodeScalars** 可以通过遍历String值的unicodeScalars属性来访问它的 Unicode 标量编码. |
-| 9    | **+** 连接两个字符串，并返回一个新的字符串                   |
-| 10   | **+=** 连接操作符两边的字符串并将新字符串赋值给左边的操作符变量 |
-| 11   | **==** 判断两个字符串是否相等                                |
-| 12   | **<** 比较两个字符串，对两个字符串的字母逐一比较             |
-| 13   | **!=** 比较两个字符串是否不相等                              |
+| 5    | **String.count** Swift 3 版本使用的是 String.characters.count 计算字符串的长度                              |
+| 6    | **utf8** 可以通过遍历 String 的 utf8 属性来访问它的 UTF-8 编码                                              |
+| 7    | **utf16** 可以通过遍历 String 的 utf8 属性来访问它的 utf16 编码                                             |
+| 8    | **unicodeScalars** 可以通过遍历 String 值的 unicodeScalars 属性来访问它的 Unicode 标量编码.                 |
+| 9    | **+** 连接两个字符串，并返回一个新的字符串                                                                  |
+| 10   | **+=** 连接操作符两边的字符串并将新字符串赋值给左边的操作符变量                                             |
+| 11   | **==** 判断两个字符串是否相等                                                                               |
+| 12   | **<** 比较两个字符串，对两个字符串的字母逐一比较                                                            |
+| 13   | **!=** 比较两个字符串  是否不相等                                                                           |
 
-
-
-### Swift数组
+### Swift 数组
 
 #### 创建数组
 
@@ -200,9 +184,7 @@ var someInts = [Int](repeating: 0, count: 3)
 var someInts:[Int] = [10, 20, 30]
 ```
 
-
-
-### Swift字典
+### Swift 字典
 
 #### 创建字典
 
@@ -226,7 +208,7 @@ var someDict:[Int:String] = [1:"One", 2:"Two", 3:"Three"]
 
 #### 修改字典
 
-可以使用 updateValue(forKey:) 增加或更新字典的内容。如果 key 不存在，则添加值，如果存在则修改 key 对应的值。updateValue(_:forKey:)方法返回Optional值。实例如下：
+可以使用 updateValue(forKey:) 增加或更新字典的内容。如果 key 不存在，则添加值，如果存在则修改 key 对应的值。updateValue(\_:forKey:)方法返回 Optional 值。实例如下：
 
 ```swift
 import Cocoa
@@ -243,7 +225,7 @@ print( "key = 2 的值为 \(someDict[2])" )
 print( "key = 3 的值为 \(someDict[3])" )
 ```
 
-#### 移除Key-Value对
+#### 移除 Key-Value 对
 
 可以使用 removeValueForKey() 方法来移除字典 key-value 对。如果 key 存在该方法返回移除的值，如果不存在返回 nil 。实例如下：
 
@@ -284,9 +266,7 @@ for (value) in dictValues {
 }
 ```
 
-
-
-### Swift函数
+### Swift 函数
 
 #### 元组作为函数返回值
 
@@ -294,7 +274,7 @@ for (value) in dictValues {
 
 可以用元组（tuple）类型让多个值作为一个复合值从函数中返回。
 
-下面的这个例子中，定义了一个名为minMax(_:)的函数，作用是在一个Int数组中找出最小值与最大值。
+下面的这个例子中，定义了一个名为 minMax(\_:)的函数，作用是在一个 Int 数组中找出最小值与最大值。
 
 ```swift
 import Cocoa

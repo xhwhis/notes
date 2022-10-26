@@ -3,15 +3,10 @@ title: computer_networking
 date: 2022-03-27T22:59:11+08:00
 draft: true
 ---
+
 # Interview Q&A Computer Networking
 
-
-
-
-
 ## 数据链路层
-
-
 
 ### 广播信道
 
@@ -22,11 +17,7 @@ draft: true
 - 广播（broadcast）帧（一对全体）：发送给本局域网上所有站点的帧
 - 多播（multicast）帧（一对多）：发送给本局域网上一部分站点的帧
 
-
-
 ## 运输层
-
-
 
 ### 为什么客户端释放最后需要 TIME-WAIT 等待 2MSL 呢？
 

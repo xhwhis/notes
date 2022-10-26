@@ -3,9 +3,10 @@ title: note3
 date: 2022-03-27T22:59:11+08:00
 draft: true
 ---
+
 # DAY04
 
-## 使用github管理代码
+## 使用 github 管理代码
 
 ### 创建一个空目录
 
@@ -15,7 +16,7 @@ cd hzoj
 pwd
 ```
 
-### 把目录变成git仓库
+### 把目录变成 git 仓库
 
 ```
 git init

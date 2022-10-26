@@ -3,25 +3,20 @@ title: c/cpp
 date: 2022-03-27T22:59:11+08:00
 draft: true
 ---
+
 # Interview Q&A C/CPP
-
-
 
 ## const
 
-int getValue();             // 普通成员函数
+int getValue(); // 普通成员函数
 
-? int getValue() const;       // 常成员函数，不得修改类中的任何数据成员的值
+? int getValue() const; // 常成员函数，不得修改类中的任何数据成员的值
 
+const char\* p2 = greeting; // 指针变量，指向字符数组常量（const 后面是 char，说明指向的字符（char）不可改变)
 
+char\* const p3 = greeting; // 自身是常量的指针，指向字符数组变量（const 后面是 p3，说明 p3 指针自身不可改变)
 
-const char* p2 = greeting;          // 指针变量，指向字符数组常量（const 后面是 char，说明指向的字符（char）不可改变)
-
-char* const p3 = greeting;          // 自身是常量的指针，指向字符数组变量（const 后面是 p3，说明 p3 指针自身不可改变)
-
-? const char* const p4 = greeting;    // 自身是常量的指针，指向字符数组常量
-
-
+? const char\* const p4 = greeting; // 自身是常量的指针，指向字符数组常量
 
 ## #pragma pack(n)
 
@@ -43,8 +38,6 @@ struct test
 #pragma pack(pop)   // 恢复对齐状态
 ```
 
-
-
 ## 位域
 
 ```cpp
@@ -56,8 +49,6 @@ Bit mode: 2;    // mode 占 2 位
 - 位域在内存中的布局是与机器有关的
 - 位域的类型必须是整型或枚举类型，带符号类型中的位域的行为将因具体实现而定
 - 取地址运算符（&）不能作用于位域，任何指针都无法指向类的位域
-
-
 
 ## explicit（显式）关键字
 
@@ -89,7 +80,7 @@ int main()
     A a2 = 1;        // OK：复制初始化
     A a3{ 1 };        // OK：直接列表初始化
     A a4 = { 1 };        // OK：复制列表初始化
-    A a5 = (A)1;        // OK：允许 static_cast 的显式转换 
+    A a5 = (A)1;        // OK：允许 static_cast 的显式转换
     doA(1);            // OK：允许从 int 到 A 的隐式转换
     if (a1);        // OK：使用转换函数 A::operator bool() 的从 A 到 bool 的隐式转换
     bool a6（a1）;        // OK：使用转换函数 A::operator bool() 的从 A 到 bool 的隐式转换
@@ -111,17 +102,13 @@ int main()
 }
 ```
 
-
-
-## C 实现 C++ 类decltype
+## C 实现 C++ 类 decltype
 
 C 实现 C++ 的面向对象特性（封装、继承、多态）
 
 - 封装：使用函数指针把属性与方法封装到结构体中
 - 继承：结构体嵌套
 - 多态：父类与子类方法的函数指针不同
-
-
 
 ## 构造函数的 using 声明
 
@@ -141,8 +128,6 @@ public:
 Derived(parms) : Base(args) { }
 ```
 
-
-
 ## enum 枚举类型
 
 ### 限定作用域的枚举类型
@@ -157,8 +142,6 @@ enum class open_modes { input, output, append };
 enum color { red, yellow, green };
 enum { floatPrec = 6, doublePrec = 10 };
 ```
-
-
 
 ## decltype
 
@@ -187,14 +170,10 @@ auto fcn2(It beg, It end) -> typename remove_reference<decltype(*beg)>::type
 }
 ```
 
-
-
 ## 引用折叠
 
 - X& &、X& &&、X&& & 可折叠成 X&
 - X&& && 可折叠成 X&&
-
-
 
 ## initializer_list 列表初始化
 
@@ -253,8 +232,6 @@ int main()
 }
 ```
 
-
-
 ## 定位 new
 
 定位 new（placement new）允许我们向 new 传递额外的地址参数，从而在预先指定的内存区域创建对象。
@@ -268,8 +245,6 @@ new (place_address) type [size] { braced initializer list }
 
 - `place_address` 是个指针
 - `initializers` 提供一个（可能为空的）以逗号分隔的初始值列表
-
-
 
 ## 运行时类型信息 (RTTI)
 

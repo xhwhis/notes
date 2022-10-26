@@ -3,6 +3,7 @@ title: note1
 date: 2022-03-27T22:59:11+08:00
 draft: true
 ---
+
 # DAY01
 
 ## 更新源
@@ -32,7 +33,7 @@ deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted univer
 程序，也能把二进制文件和依赖性预先加载到内存，以提供更快速的访
 问。随着安装后的第一次重启，它会自动运行。
 ·BleachBit（apt-get install bleachbit）释放磁盘空间，通过释放缓
-存、删除cookie、清除上网记录、粉碎临时文件、删除日志，以及丢弃
+存、删除 cookie、清除上网记录、粉碎临时文件、删除日志，以及丢弃
 其他一些非必需的文件来提高隐私性。使用高级技术，包括粉碎文件来
 防止恢复，擦除空闲磁盘空间来隐藏没有完全删除的文件的踪迹。
 
@@ -45,13 +46,7 @@ sudo apt-get update
 sudo apt-get upgrade
 ```
 
-
-
-
-
-
-
-## 配置VIM
+## 配置 VIM
 
 ### 打开终端，执行命令
 
@@ -76,11 +71,9 @@ https://blog.csdn.net/LSG_Down/article/details/89319472
 
 https://www.jianshu.com/p/75cde8a80fd7
 
+## 安装 sshpi 及 scppi
 
-
-## 安装sshpi及scppi
-
-sshpi.sh参考代码
+sshpi.sh 参考代码
 
 ```
 #!/bin/bash
@@ -134,7 +127,7 @@ echo -e "\033[46;30m You Will login\033[0m\033[46;31m $Hostname\033[0m\033[46;30
 ssh -p $port ${Username}@zentao.haizeix.tech
 ```
 
-scppi.sh参考代码
+scppi.sh 参考代码
 
 ```
 #!/bin/bash
@@ -219,9 +212,9 @@ fi
 vim sshpi.sh
 ```
 
-### 在VIM文本框里粘贴sshpi脚本的代码，保存并退出（：wq）
+### 在 VIM 文本框里粘贴 sshpi 脚本的代码，保存并退出（：wq）
 
-### 将sshpi.sh重命名为sshpi,赋予sshpi脚本可执行权限
+### 将 sshpi.sh 重命名为 sshpi,赋予 sshpi 脚本可执行权限
 
 ```
 mv sshpi.sh sshpi
@@ -234,19 +227,13 @@ chmod a+x sshpi
 echo $PATH
 ```
 
-### 将sshpi复制到PATH路径下
+### 将 sshpi 复制到 PATH 路径下
 
 ```
 cp sshpi /bin
 ```
 
-### 同样的操作生成scppi脚本
-
-
-
-
-
-
+### 同样的操作生成 scppi 脚本
 
 # DAY02
 
@@ -266,13 +253,13 @@ sshpi lws@pi3
 ssh-keygen
 ```
 
-### 将秘钥复制到authorized_keys文件中
+### 将秘钥复制到 authorized_keys 文件中
 
 ```
 cat .ssh/id_rsa.pub>>.ssh/authorized_keys
 ```
 
-### 将本机的authorized_keys文件复制到树莓派中
+### 将本机的 authorized_keys 文件复制到树莓派中
 
 ```
 scppi .ssh/authorized_keys lws@pi3:/.ssh
@@ -328,7 +315,7 @@ int main() {
 	}
 	if (send(socket_fd, username, strlen(username), 0) > 0) {
 		printf("Check Success\n");
-	} 
+	}
 	close(socket_fd);
 	return 0;
 }
@@ -336,17 +323,11 @@ int main() {
 
 gcc check.c -o check
 
-
-
-## VIM的简单使用
+## VIM 的简单使用
 
 ![img](https://ese3a9b6c5d0ic.prissl.qiqiuyun.net/course-activity-272/20190411093248-lntidnybu9wksckc/53eb89158008bece_img3?e=1563481633&token=ExRD5wolmUnwwITVeSEXDQXizfxTRp7vnaMKJbO-:CAFs0zlzq99uvJ2s6B6SYjVIbcI=)
 
-
-
-### VIM的四种模式
-
-
+### VIM 的四种模式
 
 ### 普通模式
 
@@ -359,19 +340,15 @@ gcc check.c -o check
 | R cc cG cnG c$ c^          | 替换                 |
 | u ctrl+r ctrl+v            | undo redo 可视块操作 |
 
-
-
 ### 插入模式
 
-| i    | 在光标之前追加                     |
-| ---- | ---------------------------------- |
-| a    | 在光标之后追加                     |
-| A    | 在一行的结尾处追加                 |
-| I    | 在一行的开头处插入                 |
-| o    | 在光标所在位置的下一行打开新行插入 |
-| O    | 在光标所在位置的上一行打开新行插入 |
-
-
+| i   | 在光标之前追加                     |
+| --- | ---------------------------------- |
+| a   | 在光标之后追加                     |
+| A   | 在一行的结尾处追加                 |
+| I   | 在一行的开头处插入                 |
+| o   | 在光标所在位置的下一行打开新行插入 |
+| O   | 在光标所在位置的上一行打开新行插入 |
 
 ### 命令模式
 
@@ -379,12 +356,10 @@ gcc check.c -o check
 | --------------------- | ---------------------- |
 | :w :q :wq :x :wq! :q! | 文件的保存与退出操作   |
 | :args                 | 显示文件名称，切换文件 |
-| :e foo.txt            | 打开foo.txt            |
+| :e foo.txt            | 打开 foo.txt           |
 | :saveas ~/foo.txt     | 另存为~/foo.txt        |
 | :split :vsplit        | 切分窗口               |
 | :set                  | 设置选项               |
-
-
 
 ### 其他使用技巧
 
@@ -393,13 +368,7 @@ gcc check.c -o check
 | fg          | 返回前台 |
 | /findstring | 查找     |
 
-
-
-
-
-
-
-## Python的升级与tldr的升级
+## Python 的升级与 tldr 的升级
 
 ### 打开终端，执行命令
 
@@ -408,65 +377,59 @@ sudo apt-get install python
 sudo apt-get install python3
 ```
 
-### 查看Python版本
+### 查看 Python 版本
 
 ```
 python -V
 python3 -V
 ```
 
-### 获取Python路径
+### 获取 Python 路径
 
 ```
 which python
 ```
 
-### 查看Python
+### 查看 Python
 
 ```
 ls -al /usr/bin/python
 ```
 
-### 强制删除Python，将Python3.5指向Python
+### 强制删除 Python，将 Python3.5 指向 Python
 
 ```
 sudo rm /usr/bin/python
 sudo ln /usr/bin/python3.5 /usr/bin/python
 ```
 
-### 安装pyhton3-pip
+### 安装 pyhton3-pip
 
 ```
 sudo apt-get insatll python3-pip
 ```
 
-### 升级pip
+### 升级 pip
 
 ```
 pip install --upgrade pip
 ```
 
-### pip3 list报错，解决
+### pip3 list 报错，解决
 
 ```
 sudo vim /usr/bin/pip3
 ```
 
-在文本框中pip后加上._internal
+在文本框中 pip 后加上.\_internal
 
-### 安装tldr
+### 安装 tldr
 
 ```
 sudo pip install tldr
 ```
 
-
-
-
-
-
-
-## Linux极简入门
+## Linux 极简入门
 
 ### 软件的安装与卸载
 
@@ -476,8 +439,6 @@ sudo pip install tldr
 - apt-get --purge remove xxx
 - apt-cache search xxx
 
-
-
 ### 目录
 
 | 命令  | 功能             |
@@ -486,38 +447,31 @@ sudo pip install tldr
 | pwd   | 打印当期目录工作 |
 | mkdir | 创建目录         |
 
+### cd 切换工作
 
+- cd /etc 直接切换到/etc 目录
 
-### cd切换工作
+  cd .. 切换到上层目录
 
-- cd /etc	直接切换到/etc目录
+  cd . 切换到当前目录
 
-	 cd ..	切换到上层目录
+  cd 回到自己的家目录
 
-	cd .	切换到当前目录
+  cd ~ 回到自己的家目录
 
-	cd	回到自己的家目录
+  cd - 回到上次工作目录
 
-	cd ~	回到自己的家目录
-
-	cd -	回到上次工作目录
-
-
-
-
-### pwd打印当前工作目录
+### pwd 打印当前工作目录
 
 pwd [-LP]
 
-- -L	显示逻辑工作目录
-	 -P	显示物理工作目录
+- -L 显示逻辑工作目录
+  -P 显示物理工作目录
 
-
-
-### mkdir创建目录
+### mkdir 创建目录
 
 mkdir [-pm] <dir>
 
-- -p	自动创建父目录
+- -p 自动创建父目录
 
-	 -m	设置权限
+  -m 设置权限
