@@ -1,7 +1,7 @@
 ---
 title: "Flarum mac本地化安装配置Guide"
 date: 2022-03-28T15:58:59+08:00
-draft: true
+draft: false
 ---
 
 # Mac 本地化安装配置 Flarum

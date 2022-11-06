@@ -1,7 +1,7 @@
 ---
 title: vim查找&替换
 date: 2022-03-27T22:59:11+08:00
-draft: true
+draft: false
 ---
 
 # vim 中的查找与替换

@@ -1,7 +1,7 @@
 ---
 title: git代理
 date: 2022-03-27T22:59:11+08:00
-draft: true
+draft: false
 ---
 
 # git 设置和取消代理

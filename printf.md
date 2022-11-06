@@ -1,7 +1,7 @@
 ---
 title: printf
 date: 2022-03-27T22:59:11+08:00
-draft: true
+draft: false
 ---
 
 printf 输出颜色和 ANSI 控制码(高亮,下划线,闪烁,光标位置,清屏等)
