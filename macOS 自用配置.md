@@ -1,10 +1,10 @@
 ---
-title: macos自用配置
+title: macOS 自用配置
 date: 2022-03-27T22:59:11+08:00
 draft: false
 ---
 
-### macos 自用配置
+### macOS 自用配置
 
 浏览器——google chrome
 
