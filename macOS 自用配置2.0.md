@@ -42,6 +42,12 @@ clashx、visual-studio-code、clion、docker、multipass、typora、notion、obs
 
 node、yarn、ccls、fzf、fd、ranger、autojump、thefuck、neovim、bash-language-server、bat、cmake、cocoapods、exa、go、gopls、hugo、ripgrep、rust-analyzer、shfmt、starship、yaml-language-server、taplo、helix、git-delta、gitui、just、navi、prettier、cbindgen、tldr、tokei、typescript、vhs、flutter、marksman
 
+> 其中llvm需要link，以使用llvm中的clang-format、lldb-vscode
+
+```sh
+brew link llvm --force
+```
+
 
 
 #### 升级 pip（python使用Xcode中的）
@@ -143,15 +149,26 @@ yarn global add husky
 
 
 
-#### 下载rust（https://rsproxy.cn/）
+#### 安装Rust（https://rsproxy.cn/）
 
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf https://rsproxy.cn/rustup-init.sh | sh
 ```
 
-#### 配置cargo config
+default toolchain选择nightly，profile选择complete
+
+#### 配置crates.io源
 
 编辑~/.cargo/config（[详见](https://github.com/xhwhis/config/blob/master/cargo.toml)）
+
+
+
+#### 配置go源（https://goproxy.cn/）
+
+```
+go env -w GO111MODULE=on
+$ go env -w GOPROXY=https://goproxy.cn,direct
+```
 
 
 
@@ -231,6 +248,7 @@ alias ra="ranger"
 alias cd..="cd .."
 alias proxy="export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890"
 alias unproxy="unset https_proxy http_proxy all_proxy"
+alias vm="multipass shell"
 alias -s c=copyfile
 alias -s cpp=copyfile
 ```
@@ -241,7 +259,6 @@ alias -s cpp=copyfile
 export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
 export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
 export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
-export HOMEBREW_NO_ENV_HINTS=true
 ```
 
 ###### rustup环境参数
@@ -261,10 +278,11 @@ export FLUTTER_STORAGE_BASE_URL="https://storage.flutter-io.cn"
 ###### 其他配置参数
 
 ```
+export FZF_DEFAULT_OPTS="--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4"
+
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 eval $(thefuck --alias)
 eval $(starship init zsh)
-export FZF_DEFAULT_OPTS="--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4"
 ```
 
 
