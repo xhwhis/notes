@@ -48,6 +48,12 @@ node、yarn、ccls、fzf、fd、ranger、autojump、thefuck、neovim、bash-lang
 brew link llvm --force
 ```
 
+> 其中python需要unlink，以使用Xcode中的python
+
+```sh
+brew unlink python
+```
+
 
 
 #### 升级 pip（python使用Xcode中的）
@@ -64,11 +70,12 @@ brew link llvm --force
 pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
-#### 安装pygments、pynvim
+#### 安装pygments、pynvim、black
 
 ```sh
 pip install pygments
 pip install pynvim
+pip install black
 ```
 
 
@@ -226,13 +233,13 @@ git clone https://github.com/paulirish/git-open.git $ZSH_CUSTOM/plugins/git-open
 
 ###### 自用插件
 
-```
+```sh
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting autojump web-search extract last-working-dir sudo pip thefuck colored-man-pages colorize safe-paste git-open vi-mode copyfile copypath gitfast command-not-found history)
 ```
 
 ###### aliases
 
-```
+```sh
 alias vim="nvim"
 alias vi="nvim"
 alias python="python3"
@@ -253,31 +260,41 @@ alias -s c=copyfile
 alias -s cpp=copyfile
 ```
 
+###### brew zsh completion
+
+在`source $ZSH/oh-my-zsh.sh`前添加
+
+```sh
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+```
+
 ###### homebrew环境参数
 
-```
+```sh
+export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
 export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
 export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
-export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
+export HOMEBREW_PIP_INDEX_URL="https://pypi.tuna.tsinghua.edu.cn/simple"
 ```
 
 ###### rustup环境参数
 
-```
+```sh
 export RUSTUP_DIST_SERVER="https://rsproxy.cn"
 export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
 ```
 
 ###### flutter环境参数
 
-```
+```sh
 export PUB_HOSTED_URL="https://pub.flutter-io.cn"
 export FLUTTER_STORAGE_BASE_URL="https://storage.flutter-io.cn"
 ```
 
 ###### 其他配置参数
 
-```
+```sh
 export FZF_DEFAULT_OPTS="--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4"
 
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
