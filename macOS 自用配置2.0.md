@@ -103,6 +103,7 @@ brew install --cask font-sauce-code-pro-nerd-font
 ```sh
 git config --global user.name "xhwhis"
 git config --global user.email "hi@whis.me"
+git config --global pull.rebase false
 ```
 
 编辑~/.gitconfig（[详见](https://github.com/xhwhis/config/blob/master/gitconfig)）
@@ -174,7 +175,7 @@ default toolchain选择nightly，profile选择complete
 
 ```
 go env -w GO111MODULE=on
-$ go env -w GOPROXY=https://goproxy.cn,direct
+go env -w GOPROXY=https://goproxy.cn,direct
 ```
 
 
@@ -217,6 +218,13 @@ hx --grammar build
 
 ```sh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+##### 配置ohmyzsh源（清华源）
+
+```sh
+git -C $ZSH remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/ohmyzsh.git
+git -C $ZSH pull
 ```
 
 ##### 下载ohmyzsh plugin

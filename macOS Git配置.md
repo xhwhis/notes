@@ -7,6 +7,7 @@
 ```sh
 git config --global user.name "xhwhis"
 git config --global user.email "hi@whis.me"
+git config --global pull.rebase false
 ```
 
 编辑~/.gitconfig（[详见](https://github.com/xhwhis/config/blob/master/gitconfig)）
