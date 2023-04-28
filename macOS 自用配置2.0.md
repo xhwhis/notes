@@ -14,7 +14,7 @@ xcode-select --install
 
 浏览器——Google Chrome
 
-终端——iTerm2
+终端——Warp
 
 
 
@@ -36,11 +36,11 @@ export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bot
 
 #### brew安装常用软件
 
-clashx、visual-studio-code、clion、docker、multipass、typora、notion、obsidian、telegram
+clashx、visual-studio-code、clion、docker、multipass、typora、notion、obsidian、telegram、warp、google-chrome、termius
 
 #### brew安装常用工具
 
-node、yarn、ccls、fzf、fd、ranger、autojump、thefuck、neovim、bash-language-server、bat、cmake、cocoapods、exa、go、gopls、hugo、ripgrep、rust-analyzer、shfmt、starship、yaml-language-server、taplo、helix、git-delta、gitui、just、navi、prettier、cbindgen、tldr、tokei、typescript、vhs、flutter、marksman
+node、yarn、ccls、fzf、fd、ranger、autojump、thefuck、neovim、bash-language-server、bat、cmake、cocoapods、exa、go、gopls、hugo、ripgrep、rust-analyzer、shfmt、starship、yaml-language-server、taplo、helix、git-delta、gitui、just、navi、prettier、cbindgen、tldr、tokei、typescript、vhs、flutter、marksman、lua、lua-language-server、vint、markdownlint-cli
 
 > 其中llvm需要link，以使用llvm中的clang-format、lldb-vscode
 
@@ -84,6 +84,7 @@ pip install black
 
 ```sh
 npm config set registry http://registry.npmmirror.com
+npm config set coc.nvim:registry http://registry.npmmirror.com
 yarn config set registry http://registry.npmmirror.com
 ```
 
@@ -93,7 +94,7 @@ yarn config set registry http://registry.npmmirror.com
 
 ```sh
 brew tap homebrew/cask-fonts
-brew install --cask font-sauce-code-pro-nerd-font
+brew install --cask font-sauce-code-pro-nerd-font font-source-code-pro
 ```
 
 
@@ -209,6 +210,22 @@ hx --grammar build
 配置helix config
 
 编辑~/.config/helix/config.toml（[详见]()）
+
+
+
+#### 配置SpaceVim
+
+##### 安装SpaceVim
+
+```sh
+curl -sLf https://spacevim.org/cn/install.sh | bash -s -- --install neovim
+```
+
+##### 配置SpaceVim
+
+```sh
+git clone git@github.com:xhwhis/spacevim.git .SpaceVim.d
+```
 
 
 

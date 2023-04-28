@@ -16,7 +16,7 @@ default toolchain选择nightly，profile选择complete
 
 ```toml
 [source.crates-io]
-replace-with = "rsproxy"
+replace-with = "rsproxy-sparse"
 
 [source.rsproxy]
 registry = "https://rsproxy.cn/crates.io-index"
