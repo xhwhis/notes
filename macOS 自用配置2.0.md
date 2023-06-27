@@ -34,9 +34,11 @@ export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bot
 /bin/bash -c "$(curl -fsSL https://cdn.jsdelivr.net/gh/Homebrew/install@HEAD/install.sh)"
 ```
 
+
+
 #### brew安装常用软件
 
-clashx、visual-studio-code、clion、docker、multipass、typora、notion、obsidian、telegram、warp、google-chrome、termius
+clashx、visual-studio-code、clion、docker、multipass、typora、notion、obsidian、telegram、google-chrome、termius
 
 #### brew安装常用工具
 
@@ -94,7 +96,7 @@ yarn config set registry http://registry.npmmirror.com
 
 ```sh
 brew tap homebrew/cask-fonts
-brew install --cask font-sauce-code-pro-nerd-font font-source-code-pro
+brew install --cask font-sauce-code-pro-nerd-font
 ```
 
 
@@ -291,6 +293,10 @@ alias -s cpp=copyfile
 
 ```sh
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+```
+
+```sh
+brew completions link
 ```
 
 ###### homebrew环境参数
