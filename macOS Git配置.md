@@ -55,7 +55,10 @@ yarn global add lint-staged
 编辑~/.lintstagedrc.json（[详见](https://github.com/xhwhis/config/blob/master/lintstagedrc.json)）
 
 ```json
-{ "*.{md, yml, yaml, json, xml}": "prettier --ignore-unknown --write" }
+{
+  "*.{yml, yaml, json, xml}": "prettier --ignore-unknown --write",
+  "*.md": "markdownlint-cli2 --fix"
+}
 ```
 
 ##### husky
