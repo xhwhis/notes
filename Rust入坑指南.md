@@ -2,7 +2,7 @@
 
 ## Rust 开发环境搭建
 
-### 安装 Rust（https://rsproxy.cn/ ）
+### 安装 Rust（<https://rsproxy.cn/> ）
 
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf https://rsproxy.cn/rustup-init.sh | sh
@@ -44,7 +44,7 @@ brew install rust-analyzer
 
 ## Rust 语法快速入门
 
-阅读文章https://fasterthanli.me/articles/a-half-hour-to-learn-rust （此人https://fasterthanli.me/ 的所有文章都相当值得一看），此文章较为精华简练，是上手 Rust 语法的好读物。如果不懂的较多可以搭配菜鸟教程https://www.runoob.com/rust/rust-tutorial.html
+阅读文章<https://fasterthanli.me/articles/a-half-hour-to-learn-rust> （此人<https://fasterthanli.me/> 的所有文章都相当值得一看），此文章较为精华简练，是上手 Rust 语法的好读物。如果不懂的较多可以搭配菜鸟教程<https://www.runoob.com/rust/rust-tutorial.html>
 
 ## Rust 入门学习
 
@@ -62,33 +62,39 @@ Google 出版的[Comprehensive Rust](https://google.github.io/comprehensive-rust
 
 ### Rust Manual
 
-Rust 标准库 https://www.rustwiki.org.cn/zh-CN/std/
+Rust 标准库 <https://www.rustwiki.org.cn/zh-CN/std/>
 
-Cargo 手册 https://rustwiki.org/zh-CN/cargo/
+Cargo 手册 <https://rustwiki.org/zh-CN/cargo/>
 
 ### Rust 第三方库
 
-社区 crates.io https://crates.io/
+社区 crates.io <https://crates.io/>
 
-非官方 crates.io https://lib.rs/
+非官方 crates.io <https://lib.rs/>
 
-crate 文档 https://docs.rs/
+crate 文档 <https://docs.rs/>
 
-Rust 库指南 https://blessed.rs/crates
+Rust 库指南 <https://blessed.rs/crates>
 
 ## Rust 进阶学习
 
-Rust 生命周期 https://github.com/pretzelhammer/rust-blog/blob/master/posts/translations/zh-hans/common-rust-lifetime-misconceptions.md （相当好！！！）
+Rust 生命周期 <https://github.com/pretzelhammer/rust-blog/blob/master/posts/translations/zh-hans/common-rust-lifetime-misconceptions.md> （相当好！！！）
 
-Rust std traits https://github.com/pretzelhammer/rust-blog/blob/master/posts/translations/zh-hans/tour-of-rusts-standard-library-traits.md （相当好！！！）
+Rust std traits <https://github.com/pretzelhammer/rust-blog/blob/master/posts/translations/zh-hans/tour-of-rusts-standard-library-traits.md> （相当好！！！）
 
-Rust 宏编程 https://zjp-cn.github.io/tlborm/ （https://zhuanlan.zhihu.com/p/106016118 ，该文章对声明式宏总结提炼的较好，学习 macro_rules!可以直接看此篇文章）
+Rust 宏编程 <https://zjp-cn.github.io/tlborm/> （<https://zhuanlan.zhihu.com/p/106016118> ，该文章对声明式宏总结提炼的较好，学习 macro_rules!可以直接看此篇文章）
 
-Rust 编译优化 https://github.com/johnthagen/min-sized-rust
+Rust 编译优化 <https://github.com/johnthagen/min-sized-rust>
 
-Rust 并发 https://marabos.nl/atomics/preface.html#who-this-book-is-for
+Rust FFI <https://github.com/alexcrichton/rust-ffi-examples>
 
-Rust 源码剖析 https://awesome-kusion.github.io/rust-code-book-zh/
+Rust代码覆盖率 <https://rrmprogramming.com/article/code-coverage-in-rust/>
+
+Rust 并发 <https://marabos.nl/atomics/preface.html#who-this-book-is-for>
+
+Rust NLL <http://smallcultfollowing.com/babysteps/blog/2018/04/27/an-alias-based-formulation-of-the-borrow-checker/>
+
+Rust 源码剖析 <https://awesome-kusion.github.io/rust-code-book-zh/>
 
 ## 个人建议
 
