@@ -8,24 +8,22 @@
 xcode-select --install
 ```
 
-
-
 #### 安装初始软件
 
 浏览器——Google Chrome
 
-终端——Warp
-
-
+终端——iTerm2
 
 #### 安装homebrew（清华源）
 
 设置环境变量
 
 ```sh
+export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
 export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
 export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
-export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
+export HOMEBREW_PIP_INDEX_URL="https://pypi.tuna.tsinghua.edu.cn/simple"
 ```
 
 初次安装使用jsDelivr CDN下载
@@ -34,15 +32,13 @@ export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bot
 /bin/bash -c "$(curl -fsSL https://cdn.jsdelivr.net/gh/Homebrew/install@HEAD/install.sh)"
 ```
 
-
-
 #### brew安装常用软件
 
-clashx、visual-studio-code、clion、docker、multipass、typora、notion、obsidian、telegram、google-chrome、termius
+clashx、visual-studio-code、clion、docker、multipass、typora、notion、obsidian、telegram、google-chrome、termius、1password
 
 #### brew安装常用工具
 
-node、yarn、ccls、fzf、fd、ranger、autojump、thefuck、neovim、bash-language-server、bat、cmake、cocoapods、exa、go、gopls、hugo、ripgrep、rust-analyzer、shfmt、starship、yaml-language-server、taplo、helix、git-delta、gitui、just、navi、prettier、cbindgen、tldr、tokei、typescript、vhs、flutter、marksman、lua、lua-language-server、vint、markdownlint-cli
+node、yarn、ccls、fzf、fd、ranger、zoxide、thefuck、neovim、bash-language-server、bat、cmake、cocoapods、exa、go、gopls、hugo、ripgrep、rust-analyzer、shfmt、starship、yaml-language-server、taplo、helix、git-delta、gitui、just、navi、prettier、cbindgen、tldr、tokei、typescript、vhs、flutter、marksman、lua、lua-language-server、vint、markdownlint-cli2、stylua、1password-cli
 
 > 其中llvm需要link，以使用llvm中的clang-format、lldb-vscode
 
@@ -55,8 +51,6 @@ brew link llvm --force
 ```sh
 brew unlink python
 ```
-
-
 
 #### 升级 pip（python使用Xcode中的）
 
@@ -80,17 +74,12 @@ pip install pynvim
 pip install black
 ```
 
-
-
 #### 配置npm、yarn源（阿里源）
 
 ```sh
-npm config set registry http://registry.npmmirror.com
-npm config set coc.nvim:registry http://registry.npmmirror.com
-yarn config set registry http://registry.npmmirror.com
+npm config set registry https://registry.npmmirror.com
+yarn config set registry https://registry.npmmirror.com
 ```
-
-
 
 #### 安装字体
 
@@ -98,8 +87,6 @@ yarn config set registry http://registry.npmmirror.com
 brew tap homebrew/cask-fonts
 brew install --cask font-sauce-code-pro-nerd-font
 ```
-
-
 
 #### 配置git
 
@@ -158,9 +145,7 @@ yarn global add lint-staged
 yarn global add husky
 ```
 
-
-
-#### 安装Rust（https://rsproxy.cn/）
+#### 安装Rust（<https://rsproxy.cn/）>
 
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf https://rsproxy.cn/rustup-init.sh | sh
@@ -172,16 +157,12 @@ default toolchain选择nightly，profile选择complete
 
 编辑~/.cargo/config（[详见](https://github.com/xhwhis/config/blob/master/cargo.toml)）
 
-
-
-#### 配置go源（https://goproxy.cn/）
+#### 配置go源（<https://goproxy.cn/）>
 
 ```
 go env -w GO111MODULE=on
 go env -w GOPROXY=https://goproxy.cn,direct
 ```
-
-
 
 #### 配置starship
 
@@ -198,8 +179,6 @@ command_timeout = 4000
 disabled = true
 ```
 
-
-
 #### 配置helix
 
 构建tree-sitter
@@ -213,23 +192,19 @@ hx --grammar build
 
 编辑~/.config/helix/config.toml（[详见]()）
 
+#### 配置LunarVim
 
-
-#### 配置SpaceVim
-
-##### 安装SpaceVim
+##### 安装LunarVim
 
 ```sh
-curl -sLf https://spacevim.org/cn/install.sh | bash -s -- --install neovim
+bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
 ```
 
-##### 配置SpaceVim
+##### 配置LunarVim
 
 ```sh
-git clone git@github.com:xhwhis/spacevim.git .SpaceVim.d
+git clone git@github.com:xhwhis/lvim.git .config/lvim
 ```
-
-
 
 #### 配置zsh
 
@@ -261,13 +236,13 @@ git clone https://github.com/paulirish/git-open.git $ZSH_CUSTOM/plugins/git-open
 ###### 自用插件
 
 ```sh
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting autojump web-search extract last-working-dir sudo pip thefuck colored-man-pages colorize safe-paste git-open vi-mode copyfile copypath gitfast command-not-found history)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting zoxide web-search extract last-working-dir sudo pip thefuck colored-man-pages colorize safe-paste git-open vi-mode copyfile copypath gitfast command-not-found history)
 ```
 
 ###### aliases
 
 ```sh
-alias vim="nvim"
+alias vim="lvim"
 alias vi="nvim"
 alias python="python3"
 alias pip="pip3"
@@ -280,9 +255,8 @@ alias cat="bat --theme=Dracula"
 alias find="fd"
 alias ra="ranger"
 alias cd..="cd .."
-alias proxy="export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890"
+alias proxy="export https_proxy=http://127.0.0.1:8234;export http_proxy=http://127.0.0.1:8234;export all_proxy=socks5://127.0.0.1:8235"
 alias unproxy="unset https_proxy http_proxy all_proxy"
-alias vm="multipass shell"
 alias -s c=copyfile
 alias -s cpp=copyfile
 ```
@@ -307,6 +281,7 @@ export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bot
 export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
 export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
 export HOMEBREW_PIP_INDEX_URL="https://pypi.tuna.tsinghua.edu.cn/simple"
+export HOMEBREW_UPGRADE_GREEDY=1
 ```
 
 ###### rustup环境参数
@@ -328,13 +303,12 @@ export FLUTTER_STORAGE_BASE_URL="https://storage.flutter-io.cn"
 ```sh
 export FZF_DEFAULT_OPTS="--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4"
 
-[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 eval $(thefuck --alias)
-eval $(starship init zsh)
+eval "$(op completion zsh)" && compdef _op op
+eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"
 ```
 
+#### dracula主题（<https://draculatheme.com/）>
 
-
-#### dracula主题（https://draculatheme.com/）
-
-iTerm2（https://draculatheme.com/iterm）
+iTerm2（<https://draculatheme.com/iterm）>

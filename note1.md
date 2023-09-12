@@ -67,9 +67,9 @@ sudo gedit /etc/hosts
 sudo wget -qO- https://raw.github.com/ma6174/vim/master/setup.sh | sh -x
 ```
 
-https://blog.csdn.net/LSG_Down/article/details/89319472
+<https://blog.csdn.net/LSG_Down/article/details/89319472>
 
-https://www.jianshu.com/p/75cde8a80fd7
+<https://www.jianshu.com/p/75cde8a80fd7>
 
 ## 安装 sshpi 及 scppi
 
@@ -82,44 +82,44 @@ sshpi.sh 参考代码
 #用途：远程连接树莓派
 
 function Usage() {
-	echo "Usage: sshpi Username@pi"
-	echo "Like This：sshpi UserA@pi1"
+ echo "Usage: sshpi Username@pi"
+ echo "Like This：sshpi UserA@pi1"
 }
 if [[ ! $# -eq 1  ]]; then
-	Usage
-	exit
+ Usage
+ exit
 fi
 
 echo $1 | grep "@" >/dev/zero 2>&1
 
 if [[ ! $? -eq 0 ]]; then
-	echo "argument wrong！"
-	Usage
-	exit
+ echo "argument wrong！"
+ Usage
+ exit
 fi
 Username=`echo $1 | cut -d "@" -f 1`
 if [[ ${Username}x == x ]]; then
-	echo "Please input your username!"
-	Usage
-	exit
+ echo "Please input your username!"
+ Usage
+ exit
 fi
 Hostname=`echo $1 | cut -d "@" -f 2`
 if [[ ${Hostname}x == x ]]; then
-	echo "Please input Hostname of Pi!"
-	Usage
-	exit
+ echo "Please input Hostname of Pi!"
+ Usage
+ exit
 fi
 echo $Hostname | grep -w "^pi[1-9][0-9]\?" >/dev/null 2>&1
 if [[ ! $? -eq 0 ]]; then
-	echo "Hostname is Wrong!"
-	Usage
-	exit
+ echo "Hostname is Wrong!"
+ Usage
+ exit
 fi
 HostNum=`echo $Hostname | cut -c 3-`
 if [[ $HostNum -gt 22 ]]; then
-	echo "Hostname is Wrong!"
-	Usage
-	exit
+ echo "Hostname is Wrong!"
+ Usage
+ exit
 fi
 
 port=$[6530 + $HostNum]
@@ -136,13 +136,13 @@ scppi.sh 参考代码
 #用途：远程拷贝文件，在树莓派和本机之间
 
 function Usage() {
-	echo "Usage: scppi file_or_dir Username@piname:dest_file_or_dir"
-	echo "       scppi Username@piname:./file_or_dir  file_or_dir"
-	echo "Like This：scppi PiHealth pi@pi1:./new"
+ echo "Usage: scppi file_or_dir Username@piname:dest_file_or_dir"
+ echo "       scppi Username@piname:./file_or_dir  file_or_dir"
+ echo "Like This：scppi PiHealth pi@pi1:./new"
 }
 if [[ ! $# -eq 2  ]]; then
-	Usage
-	exit
+ Usage
+ exit
 fi
 #1.源
 #2.目标
@@ -150,59 +150,59 @@ fi
 echo $1 | grep -q "@"
 
 if [[ $? -eq 0 ]]; then
-	remote=$1
-	local=$2
+ remote=$1
+ local=$2
 else
-	remote=$2
-	local=$1
+ remote=$2
+ local=$1
 fi
 
 echo $remote | grep @ | grep : >/dev/null 2>&1
 if [[ ! $? -eq 0 ]]; then
-	echo "argument wrong！"
-	Usage
-	exit
+ echo "argument wrong！"
+ Usage
+ exit
 fi
 Username=`echo $remote | cut -d "@" -f 1`
 if [[ ${Username}x == x ]]; then
-	echo "Please input your username!"
-	Usage
-	exit
+ echo "Please input your username!"
+ Usage
+ exit
 fi
 Hostname=`echo $remote | cut -d "@" -f 2 | cut -d ":" -f 1`
 if [[ ${Hostname}x == x ]]; then
-	echo "Please input Hostname of Pi!"
-	Usage
-	exit
+ echo "Please input Hostname of Pi!"
+ Usage
+ exit
 fi
 echo $Hostname | grep -w "^pi[1-9][0-9]\?" >/dev/null 2>&1
 if [[ ! $? -eq 0 ]]; then
-	echo "Hostname is Wrong!"
-	Usage
-	exit
+ echo "Hostname is Wrong!"
+ Usage
+ exit
 fi
 dir_file=`echo $remote | cut -d "@" -f 2 | cut -d ":" -f 2`
 if [[ ${dir_file}x == x ]]; then
-	echo "Please input dest_file_or_dir of Pi!"
-	Usage
-	exit
+ echo "Please input dest_file_or_dir of Pi!"
+ Usage
+ exit
 fi
 
 HostNum=`echo $Hostname | cut -c 3-`
 
 if [[ $HostNum -gt 22 ]]; then
-	echo "Hostname is Wrong!"
-	Usage
-	exit
+ echo "Hostname is Wrong!"
+ Usage
+ exit
 fi
 
 port=$[6530 + $HostNum]
 echo -e "\033[46;30m Coping \033[46;31m$1\033[46;30m to \033[46;31m$dir_file\033[46;30m on \033[46;31m$Hostname\033[46;30m with Username \033[46;31m$Username\033[46;30m, enjoy it!\033[0m"
 
 if [[ $1 = $local ]]; then
-	scp -P $port -r $1  ${Username}@zentao.haizeix.tech:$dir_file
+ scp -P $port -r $1  ${Username}@zentao.haizeix.tech:$dir_file
 else
-	scp -P $port -r ${Username}@zentao.haizeix.tech:$dir_file $local
+ scp -P $port -r ${Username}@zentao.haizeix.tech:$dir_file $local
 fi
 ```
 
@@ -280,44 +280,44 @@ check.c
 #include <pwd.h>
 
 int socket_connect(int port, char *host) {
-	int sockfd;
-	struct sockaddr_in dest_addr;
-	if ((sockfd = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
-		perror("socket() error");
-		return -1;
-	}
+ int sockfd;
+ struct sockaddr_in dest_addr;
+ if ((sockfd = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
+  perror("socket() error");
+  return -1;
+ }
 
-	memset(&dest_addr, 0, sizeof(dest_addr));
-	dest_addr.sin_family = AF_INET;
-	dest_addr.sin_port = htons(port);
-	dest_addr.sin_addr.s_addr = inet_addr(host);
+ memset(&dest_addr, 0, sizeof(dest_addr));
+ dest_addr.sin_family = AF_INET;
+ dest_addr.sin_port = htons(port);
+ dest_addr.sin_addr.s_addr = inet_addr(host);
 
-	if (connect(sockfd, (struct sockaddr *)&dest_addr, sizeof(dest_addr)) < 0) {
-		perror("connect() error");
-		return -1;
-	}
-	return sockfd;
+ if (connect(sockfd, (struct sockaddr *)&dest_addr, sizeof(dest_addr)) < 0) {
+  perror("connect() error");
+  return -1;
+ }
+ return sockfd;
 
 }
 
 int main() {
-	int  socket_fd;
-	struct passwd *pwd;
-	pwd = getpwuid(getuid());
-	char ip_addr[20] = "192.168.1.40";
-	int port = 8888;
-	char username[20] = {0};
-	strcpy(username, pwd->pw_name);
-	socket_fd = socket_connect(port, ip_addr);
-	if (socket_fd < 0)
-	{
-		exit(1);
-	}
-	if (send(socket_fd, username, strlen(username), 0) > 0) {
-		printf("Check Success\n");
-	}
-	close(socket_fd);
-	return 0;
+ int  socket_fd;
+ struct passwd *pwd;
+ pwd = getpwuid(getuid());
+ char ip_addr[20] = "192.168.1.40";
+ int port = 8888;
+ char username[20] = {0};
+ strcpy(username, pwd->pw_name);
+ socket_fd = socket_connect(port, ip_addr);
+ if (socket_fd < 0)
+ {
+  exit(1);
+ }
+ if (send(socket_fd, username, strlen(username), 0) > 0) {
+  printf("Check Success\n");
+ }
+ close(socket_fd);
+ return 0;
 }
 ```
 

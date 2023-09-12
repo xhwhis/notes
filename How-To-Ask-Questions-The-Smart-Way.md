@@ -530,7 +530,7 @@ Jeff Bigler 的观察总结和这个相关也值得一读 (**[tact filters](http
 
 > 问题：如何设定我的 shell 提示？？
 
-回答：如果你有足够的智慧提这个问题，你也该有足够的智慧去 [RTFM](#RTFM)，然后自己去找出来。
+回答：如果你有足够的智慧提这个问题，你也该有足够的智慧去 [RTFM](#rtfm)，然后自己去找出来。
 
 <a id="q4"></a>
 
@@ -584,7 +584,7 @@ Jeff Bigler 的观察总结和这个相关也值得一读 (**[tact filters](http
 
 > 我可以在哪儿找到关于 Foonly Flurbamatic 的资料？
 
-这种问法无非想得到 [STFW](#RTFM) 这样的回答。
+这种问法无非想得到 [STFW](#rtfm) 这样的回答。
 
 **聪明问题**：
 

@@ -6,7 +6,7 @@ draft: false
 
 # git 设置和取消代理
 
-## 设置如下：
+## 设置如下
 
 ```bash
 git config --global https.proxy http://127.0.0.1:1080

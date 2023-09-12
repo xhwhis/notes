@@ -1,6 +1,6 @@
 # Git 飞行规则(Flight Rules)
 
-> Copied from https://github.com/k88hudson/git-flight-rules
+> Copied from <https://github.com/k88hudson/git-flight-rules>
 
 #### 什么是"飞行规则"?
 
@@ -104,7 +104,7 @@
 或者
 
 ```sh
-$ git log -n1 -p
+git log -n1 -p
 ```
 
 <a name="#i-wrote-the-wrong-thing-in-a-commit-message"></a>
@@ -114,13 +114,13 @@ $ git log -n1 -p
 如果你的提交信息(commit message)写错了且这次提交(commit)还没有推(push), 你可以通过下面的方法来修改提交信息(commit message):
 
 ```sh
-$ git commit --amend --only
+git commit --amend --only
 ```
 
 这会打开你的默认编辑器, 在这里你可以编辑信息. 另一方面, 你也可以用一条命令一次完成:
 
 ```sh
-$ git commit --amend --only -m 'xxxxxxx'
+git commit --amend --only -m 'xxxxxxx'
 ```
 
 如果你已经推(push)了这次提交(commit), 你可以修改这次提交(commit)然后强推(force push), 但是不推荐这么做。
@@ -132,7 +132,7 @@ $ git commit --amend --only -m 'xxxxxxx'
 如果这只是单个提交(commit)，修改它：
 
 ```sh
-$ git commit --amend --author "New Authorname <authoremail@mydomain.com>"
+git commit --amend --author "New Authorname <authoremail@mydomain.com>"
 ```
 
 如果你需要修改所有历史, 参考 'git filter-branch'的指南页.
@@ -144,9 +144,9 @@ $ git commit --amend --author "New Authorname <authoremail@mydomain.com>"
 通过下面的方法，从一个提交(commit)里移除一个文件:
 
 ```sh
-$ git checkout HEAD^ myfile
-$ git add -A
-$ git commit --amend
+git checkout HEAD^ myfile
+git add -A
+git commit --amend
 ```
 
 这将非常有用，当你有一个开放的补丁(open patch)，你往上面提交了一个不必要的文件，你需要强推(force push)去更新这个远程补丁。
@@ -158,8 +158,8 @@ $ git commit --amend
 如果你需要删除推了的提交(pushed commits)，你可以使用下面的方法。可是，这会不可逆的改变你的历史，也会搞乱那些已经从该仓库拉取(pulled)了的人的历史。简而言之，如果你不是很确定，千万不要这么做。
 
 ```sh
-$ git reset HEAD^ --hard
-$ git push -f [remote] [branch]
+git reset HEAD^ --hard
+git push -f [remote] [branch]
 ```
 
 如果你还没有推到远程, 把 Git 重置(reset)到你最后一次提交前的状态就可以了(同时保存暂存的变化):
@@ -178,15 +178,15 @@ $ git push -f [remote] [branch]
 同样的警告：不到万不得已的时候不要这么做.
 
 ```sh
-$ git rebase --onto SHA1_OF_BAD_COMMIT^ SHA1_OF_BAD_COMMIT
-$ git push -f [remote] [branch]
+git rebase --onto SHA1_OF_BAD_COMMIT^ SHA1_OF_BAD_COMMIT
+git push -f [remote] [branch]
 ```
 
 或者做一个 [交互式 rebase](#interactive-rebase) 删除那些你想要删除的提交(commit)里所对应的行。
 
 <a name="#force-push"></a>
 
-### 我尝试推一个修正后的提交(amended commit)到远程，但是报错：
+### 我尝试推一个修正后的提交(amended commit)到远程，但是报错
 
 ```sh
 To https://github.com/yourusername/repo.git
@@ -242,13 +242,13 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 一般来说, 如果你想暂存一个文件的一部分, 你可这样做:
 
 ```sh
-$ git add --patch filename.x
+git add --patch filename.x
 ```
 
 `-p` 简写。这会打开交互模式， 你将能够用 `s` 选项来分隔提交(commit)； 然而, 如果这个文件是新的, 会没有这个选择， 添加一个新文件时, 这样做:
 
 ```sh
-$ git add -N filename.x
+git add -N filename.x
 ```
 
 然后, 你需要用 `e` 选项来手动选择需要添加的行，执行 `git diff --cached` 将会显示哪些行暂存了哪些行只是保存在本地了。
@@ -267,11 +267,11 @@ $ git add -N filename.x
 但假定你就是想要这么做，这里你可以创建一个临时的 commit 来保存你已暂存的内容，然后暂存你的未暂存的内容并进行 stash。然后 reset 最后一个 commit 将原本暂存的内容变为未暂存，最后 stash pop 回来。
 
 ```sh
-$ git commit -m "WIP"
-$ git add .
-$ git stash
-$ git reset HEAD^
-$ git stash pop --index 0
+git commit -m "WIP"
+git add .
+git stash
+git reset HEAD^
+git stash pop --index 0
 ```
 
 注意 1: 这里使用`pop`仅仅是因为想尽可能保持幂等。
@@ -284,7 +284,7 @@ $ git stash pop --index 0
 ### 我想把未暂存的内容移动到一个新分支
 
 ```sh
-$ git checkout -b my-branch
+git checkout -b my-branch
 ```
 
 <a href="move-unstaged-edits-to-old-branch"></a>
@@ -292,9 +292,9 @@ $ git checkout -b my-branch
 ### 我想把未暂存的内容移动到另一个已存在的分支
 
 ```sh
-$ git stash
-$ git checkout my-branch
-$ git stash pop
+git stash
+git checkout my-branch
+git stash pop
 ```
 
 <a href="i-want-to-discard-my-local-uncommitted-changes"></a>
@@ -317,7 +317,7 @@ $ git stash pop
 重置某个特殊的文件, 你可以用文件名做为参数:
 
 ```sh
-$ git reset filename
+git reset filename
 ```
 
 <a href="i-want-to-discard-specific-unstaged-changes"></a>
@@ -367,7 +367,7 @@ c5bc55a HEAD@{1}: checkout: checkout message goes here
 重置分支到你所需的提交(desired commit):
 
 ```sh
-$ git reset --hard c5bc55a
+git reset --hard c5bc55a
 ```
 
 完成。
@@ -538,7 +538,7 @@ HEAD is now at a13b85e
 一旦你在 github 上面合并(merge)了一个 pull request, 你就可以删除你 fork 里被合并的分支。 如果你不准备继续在这个分支里工作, 删除这个分支的本地拷贝会更干净，使你不会陷入工作分支和一堆陈旧分支的混乱之中。
 
 ```sh
-$ git fetch -p
+git fetch -p
 ```
 
 <a name='restore-a-deleted-branch'></a>
@@ -766,7 +766,7 @@ Newer, awesomer features
 # You are currently editing a commit while rebasing branch 'main' on '8074d12'.
 #
 # Changes to be committed:
-#	modified:   README.md
+# modified:   README.md
 #
 
 ```
@@ -851,7 +851,7 @@ Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
 
-	modified:   README.md
+ modified:   README.md
 ```
 
 在这个例子里面, `README.md` 有冲突。 打开这个文件找到类似下面的内容:
@@ -896,13 +896,13 @@ Changes not staged for commit:
 暂存你工作目录下的所有改动
 
 ```sh
-$ git stash
+git stash
 ```
 
 你可以使用`-u`来排除一些文件
 
 ```sh
-$ git stash -u
+git stash -u
 ```
 
 ### 暂存指定文件
@@ -910,13 +910,13 @@ $ git stash -u
 假设你只想暂存某一个文件
 
 ```sh
-$ git stash push working-directory-path/filename.ext
+git stash push working-directory-path/filename.ext
 ```
 
 假设你想暂存多个文件
 
 ```sh
-$ git stash push working-directory-path/filename1.ext working-directory-path/filename2.ext
+git stash push working-directory-path/filename1.ext working-directory-path/filename2.ext
 ```
 
 <a name="stash-msg"></a>
@@ -926,13 +926,13 @@ $ git stash push working-directory-path/filename1.ext working-directory-path/fil
 这样你可以在`list`时看到它
 
 ```sh
-$ git stash save <message>
+git stash save <message>
 ```
 
 或
 
 ```sh
-$ git stash push -m <message>
+git stash push -m <message>
 ```
 
 <a name="stash-apply-specific"></a>
@@ -942,13 +942,13 @@ $ git stash push -m <message>
 首先你可以查看你的`stash`记录
 
 ```sh
-$ git stash list
+git stash list
 ```
 
 然后你可以`apply`某个`stash`
 
 ```sh
-$ git stash apply "stash@{n}"
+git stash apply "stash@{n}"
 ```
 
 此处， 'n'是`stash`在栈中的位置，最上层的`stash`会是 0
@@ -956,7 +956,7 @@ $ git stash apply "stash@{n}"
 除此之外，也可以使用时间标记(假如你能记得的话)。
 
 ```sh
-$ git stash apply "stash@{2.hours.ago}"
+git stash apply "stash@{2.hours.ago}"
 ```
 
 <a href="stage-and-keep-unstaged"></a>
@@ -966,8 +966,8 @@ $ git stash apply "stash@{2.hours.ago}"
 你需要手动 create 一个`stash commit`， 然后使用`git stash store`。
 
 ```sh
-$ git stash create
-$ git stash store -m "commit-message" CREATED_SHA1
+git stash create
+git stash store -m "commit-message" CREATED_SHA1
 ```
 
 <a name="miscellaneous-objects"></a>
@@ -979,13 +979,13 @@ $ git stash store -m "commit-message" CREATED_SHA1
 ### 克隆所有子模块
 
 ```sh
-$ git clone --recursive git://github.com/foo/bar.git
+git clone --recursive git://github.com/foo/bar.git
 ```
 
 如果已经克隆了:
 
 ```sh
-$ git submodule update --init --recursive
+git submodule update --init --recursive
 ```
 
 <a name="delete-tag"></a>
@@ -993,8 +993,8 @@ $ git submodule update --init --recursive
 ### 删除标签(tag)
 
 ```sh
-$ git tag -d <tag_name>
-$ git push <remote> :refs/tags/<tag_name>
+git tag -d <tag_name>
+git push <remote> :refs/tags/<tag_name>
 ```
 
 <a name="recover-tag"></a>
@@ -1004,13 +1004,13 @@ $ git push <remote> :refs/tags/<tag_name>
 如果你想恢复一个已删除标签(tag), 可以按照下面的步骤: 首先, 需要找到无法访问的标签(unreachable tag):
 
 ```sh
-$ git fsck --unreachable | grep tag
+git fsck --unreachable | grep tag
 ```
 
 记下这个标签(tag)的 hash，然后用 Git 的 [update-ref](http://git-scm.com/docs/git-update-ref):
 
 ```sh
-$ git update-ref refs/tags/<tag_name> <hash>
+git update-ref refs/tags/<tag_name> <hash>
 ```
 
 这时你的标签(tag)应该已经恢复了。
@@ -1108,7 +1108,7 @@ c10f740 HEAD@{2}: checkout: moving from main to 2.2
 如果事实证明你不小心回移(move back)了提交(commit), reflog 会包含你不小心回移前 main 上指向的提交(0254ea7)。
 
 ```sh
-$ git reset --hard 0254ea7
+git reset --hard 0254ea7
 ```
 
 然后使用 git reset 就可以把 main 改回到之前的 commit，这提供了一个在历史被意外更改情况下的安全网。

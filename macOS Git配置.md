@@ -1,7 +1,5 @@
 ### macOS Git配置
 
-
-
 #### 配置git
 
 ```sh
@@ -14,16 +12,12 @@ git config --global pull.rebase false
 
 编辑~/.gitigrone_global（[详见](https://github.com/xhwhis/config/blob/master/gitigrone_global)）
 
-
-
 #### git工具下载
 
 ```sh
 brew install git-delta
 brew install gitui
 ```
-
-
 
 #### 配置git-commit
 

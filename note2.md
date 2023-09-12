@@ -90,10 +90,10 @@ nl [-bnw] <file>
 选项
 
 - -b:行号指定的方式
-- - -b a:相当于 cat -n
+  - - -b a:相当于 cat -n
   - -b t:相当于 cat -b
 - -n:列出行号的表示方法
-- - -n ln:行号在屏幕最左边显示
+  - - -n ln:行号在屏幕最左边显示
   - -n rn:行号在自己字段的最右边显示
   - -n rz:行号在自己字段的最右边显示,前面自动补全 0
 - -w <num>:行号所占位数
@@ -147,8 +147,8 @@ man ls | nl -b a -w 5 -n rz | head -n 120 | tail -n 20
 ### 打开终端,执行命令
 
 ```
-sudo service NetworkManager stop	#关闭NetworkManager
-sudo service NetworkManager start	#开启NetworkManager
+sudo service NetworkManager stop #关闭NetworkManager
+sudo service NetworkManager start #开启NetworkManager
 ```
 
 ### 执行命令,查看网卡命名

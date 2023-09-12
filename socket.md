@@ -84,7 +84,7 @@ int bind(int sockfd, const struct sockaddr *addr, socklen_t addrlen);
 
   ```
 
-/_ Internet address. _/
+/_Internet address._/
 struct in*addr {
 uint32_t s_addr; /* address in network byte order \_/
 };
@@ -113,7 +113,7 @@ Unix域对应的是：
 
 ```
 
-#define UNIX_PATH_MAX 108
+# define UNIX_PATH_MAX 108
 
 struct sockaddr*un {
 sa_family_t sun_family; /* AF*UNIX */
@@ -159,7 +159,7 @@ TCP服务器端依次调用socket()、bind()、listen()之后，就会监听指�
 
 ```
 
-int accept(int sockfd, struct sockaddr *addr, socklen_t *addrlen);
+int accept(int sockfd, struct sockaddr *addr, socklen_t*addrlen);
 
 ```
 
@@ -214,7 +214,8 @@ write函数将buf中的nbytes字节内容写入文件描述符fd.成功时返回
 
 ```
 
-#include <unistd.h>
+# include <unistd.h>
+
 int close(int fd);
 
 ```

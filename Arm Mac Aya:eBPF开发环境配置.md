@@ -1,12 +1,10 @@
 ### Arm Mac Aya/eBPF开发环境配置
 
-
-
 #### Linux环境配置
 
 ##### 创建vm
 
-使用multipass工具（https://multipass.run/）
+使用multipass工具（<https://multipass.run/）>
 
 安装multipass
 
@@ -21,8 +19,6 @@ multipass launch --name vm --cpus 4 --disk 40G --memory 4G
 ```
 
 磁盘空间大小暂定40G
-
-
 
 ##### 修改Ubuntu软件源（清华源）
 
@@ -46,9 +42,7 @@ sudo apt upgrade
 sudo apt autoremove
 ```
 
-
-
-#### 安装Rust（https://rsproxy.cn/）
+#### 安装Rust（<https://rsproxy.cn/）>
 
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf https://rsproxy.cn/rustup-init.sh | sh
@@ -76,8 +70,6 @@ index = "https://rsproxy.cn/crates.io-index"
 git-fetch-with-cli = true
 ```
 
-
-
 #### 安装bpd-linker依赖
 
 安装构建依赖
@@ -97,8 +89,6 @@ sudo apt install llvm-15-dev libclang-15-dev
 ```sh
 cargo install --no-default-features --features system-llvm bpf-linker
 ```
-
-
 
 #### 构建Aya程序
 
@@ -122,8 +112,6 @@ RUST_LOG=info cargo xtask run -- --iface lo
 ```
 
 程序正常输出，配置完成！
-
-
 
 #### vscode配置
 

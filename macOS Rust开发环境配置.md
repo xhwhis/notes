@@ -1,8 +1,6 @@
 macOS Rust开发环境配置
 
-
-
-安装Rust（https://rsproxy.cn/）
+安装Rust（<https://rsproxy.cn/）>
 
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf https://rsproxy.cn/rustup-init.sh | sh
@@ -29,8 +27,6 @@ index = "https://rsproxy.cn/crates.io-index"
 [net]
 git-fetch-with-cli = true
 ```
-
-
 
 下载rust-analyzer二进制
 

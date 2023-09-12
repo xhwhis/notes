@@ -145,6 +145,6 @@ git clone https://github.com/lws597/SpaceVim.git .SpaceVim.d
 
 Xcode、vscode、iterm2、zsh 自用配色主题为`dracula`
 
-https://draculatheme.com/
+<https://draculatheme.com/>
 
-https://github.com/dracula/dracula-theme
+<https://github.com/dracula/dracula-theme>

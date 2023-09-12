@@ -47,27 +47,27 @@ Caddyfile
 
 ```
 ql.whis.me {
-	tls hi@whis.me
-	encode gzip
-	reverse_proxy :5700 {
-		header_up X-Real-IP {remote_host}
-	}
+ tls hi@whis.me
+ encode gzip
+ reverse_proxy :5700 {
+  header_up X-Real-IP {remote_host}
+ }
 }
 
 jd.whis.me {
-	tls hi@whis.me
-	encode gzip
-	reverse_proxy :8082 {
-		header_up X-Real-IP {remote_host}
-	}
+ tls hi@whis.me
+ encode gzip
+ reverse_proxy :8082 {
+  header_up X-Real-IP {remote_host}
+ }
 }
 
 vw.whis.me {
-	tls hi@whis.me
-	encode gzip
-	reverse_proxy :8080 {
-		header_up X-Real-IP {remote_host}
-	}
+ tls hi@whis.me
+ encode gzip
+ reverse_proxy :8080 {
+  header_up X-Real-IP {remote_host}
+ }
 }
 ```
 
